@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Cab Payment</title>
+    <script type="text/javascript" src="https://sampath.paycorp.lk/webinterface/qw/paycorp_payments.js"></script>
+    <script>
+       /*   var currency = [[${currency}]];
+            var comment = [[${comment}]];
+            var amount = [[${paymentAmount}]];
+            var clientRef = [[${clientRef}]];*/
+            function buildPayment() {
+                return {
+                    clientId: 14002582,
+                    paymentAmount: 1000,
+                    currency: "LKR",
+                    returnUrl: 'http://localhost:8085/com/ceyloncab/paymentmgtservice/payment/callback',
+                    clientRef: "2303144970",
+                    comment:"COMMENT"
+                };
+            }
+        </script>
+    <style>
+            #hosted{
+                float: left;
+                width: 45%;
+            }
+            input[type=submit]{
+                width: 30%;
+                height: 40px;
+            }
+            iframe{
+                width:500px;
+                height:500px;
+            }
+            .i-frame{
+                float: left;
+                width: 50%;
+            }
+            .paycorp-payment{
+                border: 1px solid black;
+                border-radius: 7px;
+            }
+        </style>
+
+</head>
+<body onload="loadPaycorpPayment(buildPayment())">
+</body>
+</html>
