@@ -1,5 +1,5 @@
 # paymentmgt
-Microservice for handling OTP generation and validation.
+Microservice for handling payments and user wallet management.
 
 ## Features
 * Payment management and driver wallet management.
